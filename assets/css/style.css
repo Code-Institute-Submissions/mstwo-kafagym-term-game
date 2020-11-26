@@ -1,5 +1,6 @@
 body {
     background-color:#4B4D4F;
+    overflow: hidden;
 }
 .logo {
     margin-top: 10px;
@@ -8,31 +9,9 @@ body {
     max-width: 100%;
     height: auto;
 }
-#random-word {
+#gym-terms {
+    color: #FAA61A;
+}
+.col-lg-6 .typingTime {
     color: #F7941E;
-}
-.form-control {
-    /* width: auto; */
-}
-
-.btn--cta {
-    font-weight: bold;
-    position: relative;
-    width: 160px;
-    border-radius: 23px; 
-} 
-.btn--orange {
-    background-color: #FAA61A;
-    color: #fafafa;
-    border-color: #F7941E;
-    text-align: center !important;
-}
-.btn--orange:hover {
-    background-color: #F7941E;
-    color: #fafafa;
-    border-color: #F7941E;
-    font-weight: bold;
-}
-.pointer {
-    cursor: pointer;
 }
