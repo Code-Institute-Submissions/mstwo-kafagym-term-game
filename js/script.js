@@ -13,13 +13,37 @@ const terms = ['Abs', 'Absolute Strength', 'Active rest', 'Adduct muscles', 'Aer
 
 function init() {
     displayTerm(terms);
-    setInterval(countingDown, 1000);
-    setInterval(checkStatus, 40);
+    entryWord.addEventListener('input', beginComparison)
+    setTimeout(() => {
+        setInterval(countingDown, 1000);
+        setInterval(checkStatus, 40);
+    }, 3000)
+}
+
+function beginComparison() {
+    if(correctComparisson()) {
+        gameLoading = true;
+        displayTerm(terms);
+        entryWord.value = '';
+    }
 }
 
 function displayTerm(terms) {
     const randomIndex = Math.floor(Math.random() * terms.length);
     gymTerms.innerHTML = terms[randomIndex];
+    setTimeout(() => {
+        gymTerms.style.display = 'none';
+    }, 3000)
+}
+
+function correctComparisson() {
+    if(entryWord.value === gymTerms.innerHTML) {
+        feedback.innerHTML = 'Passed!';
+        return true;
+    } else {
+        feedback.innerHTML = 'Fail!';
+        return false;
+    }
 }
 
 function countingDown() {
@@ -36,5 +60,7 @@ function checkStatus(){
         feedbackMessage.innerHTML = 'End of play!';
     }
 }
+
+
 
 
